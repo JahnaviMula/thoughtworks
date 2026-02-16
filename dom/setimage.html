@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<head></head>
+<body>
+    <input type="text" id="txt">
+    <input type="button" value="add image" onclick="fun()">
+    <script>
+        function fun(){
+            var lin=document.getElementById("txt").value 
+            var x=document.createElement("img")
+            x.src=lin
+            document.body.appendChild(x)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        .nothing{
+            background-color: rgb(210, 245, 9);
+            border: 2px solid red;
+            width: 460px;
+            border-radius: 20px;
+        }
+        img{
+            width: 100px;
+            height: 100px;
+            vertical-align: middle;
+            padding: 25px;
+        }
+        .editstyle{
+            display: inline-block;
+            margin-left:400px ;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    Name:<input type="text" id="nm"><br>
+    Number:<input type="text" id="nm1"><br>
+    email:<input type="text" id="nm2"><br>
+    Image:<input type="file" id="nm3"><br>
+    <input type="button" value="add to contact" onclick="fun()" id="addto">
+    <input type="text" placeholder="search contact ?" id="contact" onkeyup="fun2()">
+    <script>
+        let currentDiv;
+        function fun(){
+            if(document.getElementById("addto").value!=="update")
+          {
+            var x=document.createElement("div")
+            var pt=document.createElement("p")
+                pt.innerText="Name:"+document.getElementById("nm").value
+            var pt1=document.createElement("p")
+                pt1.innerText="Number:"+document.getElementById("nm1").value   
+            var pt2=document.createElement("p")
+                pt2.innerText="email:"+document.getElementById("nm2").value 
+            var image=document.createElement("img")
+                          var file = document.getElementById("nm3").files[0];
+            if(file){
+                image.src = URL.createObjectURL(file);
+            }
+            var editbtn=document.createElement("button")
+            editbtn.innerText="EDIT"
+            editbtn.classList.add("editstyle")
+            var xbtn=document.createElement("button")
+            xbtn.innerText="x"
+            xbtn.classList.add("editstyle")
+            x.appendChild(xbtn)
+            x.appendChild(image)     
+            x.appendChild(pt)
+            x.appendChild(pt1)
+            x.appendChild(pt2)
+            x.appendChild(editbtn)
+            x.classList.add("nothing")
+            document.body.appendChild(x) 
+            xbtn.addEventListener("click",function(){
+                alert("are u sure want to delete?")
+                x.remove()
+            }) 
+            editbtn.addEventListener("click",function(){
+                document.getElementById("nm").value=pt.innerHTML.replace("Name:","")
+                document.getElementById("nm1").value=pt1.innerHTML.replace("Number:","")
+                document.getElementById("nm2").value=pt2.innerHTML.replace("email:","")
+                currentDiv=x 
+                document.getElementById("addto").value="update"
+            }) 
+        }
+        else{
+                var p = currentDiv.querySelectorAll("p");
+                p[0].innerText = "Name:" + nm.value;
+                p[1].innerText = "Number:" + nm1.value;
+                p[2].innerText = "Email:" + nm2.value;
+                document.getElementById("addto").value = "add to contact";
+                currentDiv = null;
+        }
+    } 
+        function fun2(){
+          let searchText = document.getElementById("contact").value.toLowerCase();
+         let contacts = document.querySelectorAll(".nothing");
+         contacts.forEach(function (div) {
+        let contactText = div.innerText.toLowerCase();
+        if (contactText.includes(searchText)) {
+            div.style.display = "block";
+        } else {
+            div.style.display = "none";
+        }
+    });
+        }  
+    </script>
+</body>
+</html>

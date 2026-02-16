@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <script>
+        var n=+prompt()
+        a=0;b=0;t=0;c=1
+        if(n==0 || n==1)
+          console.log("yes")
+        else 
+        {
+          while(c<=n)
+        {
+          if(n==c)
+        {
+          t=1
+          break
+        }
+        a=b
+        b=c
+        c=a+b
+        }
+      }
+        if(t==1)
+        {
+          console.log("fibonacci number")
+        }
+        else 
+         console.log("not fibonacci number")
+        </script>
+    </body>
+</html>

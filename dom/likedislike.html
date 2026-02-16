@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        #likebtn{
+            background-color: green;
+        }
+        #unlikebtn{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="like" id="likebtn" onclick="fun1()">
+    <p id="likep">0</p>
+    <br></br>
+    <input type="button" value="dislike" id="unlikebtn" onclick="fun()">
+    <p id="unlikep">0</p>
+    <script>
+       function fun1()
+       {
+        var x=document.getElementById("likep").innerHTML
+              x=Number(x)+1
+              document.getElementById("likep").innerText=x
+       }
+        function fun()
+       {
+        var x=document.getElementById("unlikep").innerHTML
+              x=Number(x)+1
+              document.getElementById("unlikep").innerText=x
+       }
+    </script>
+</body>
+</html>

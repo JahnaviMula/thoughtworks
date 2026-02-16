@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        var ar=+prompt("enter a number")
+        function fun(a)
+        {
+            lena=a.toString().length
+            int_a=Number(a)
+            temp=int_a
+            sum=0
+            while(int_a!=0)
+           {
+              r=int_a%10
+              sum=sum+r**lena
+              int_a=parseInt(int_a/10)
+            }
+            if(temp==sum)
+            {
+                console.log("armstrong number")
+            }
+        }
+        fun(ar)
+    </script>
+</body>
+</html>

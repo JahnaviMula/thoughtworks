@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        var ar=[1,2,3,4,5,6,7]
+        function check(a)
+        {   init=a[0]  
+            asce=true
+            for(var i=0;i<a.length-1;i++){
+                if(a[i]<init)
+                 asce=false
+                init=a[i]
+        }
+        if(asce)
+         return "yes follows ascending order"
+        else
+          return "no it is not follow ascending order"
+       }
+       console.log(check(ar))
+       console.log(check(ar.reverse()))
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+    <head><tittle></tittle></head>
+    <body>
+        <script>
+            var stock=+prompt("enter  current stock");
+            var season=+prompt("enter season(1) or not(0)");
+            if(stock==0)
+           {
+              console.log("out of stock")
+           }
+           else
+           {
+            if (season==1)
+            {
+                if(stock<50)
+                 console.log("restock")
+                else
+                  console.log("sufficicent")
+            }
+            else
+            {
+               if(stock<20)
+                 console.log("restock")
+                else
+                 console.log("sufficient")
+
+            }
+           }
+        </script>
+    </body>
+</html>

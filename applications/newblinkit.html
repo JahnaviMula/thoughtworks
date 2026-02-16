@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        body{
+             background: linear-gradient(to right, #a0a09b, #8c9660);
+      }
+        h1,h5{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;}
+        .display_items{
+            border-radius: 10%;
+            width: 200px;
+            height: 250px;
+            margin: 4px;
+            text-align: center;
+            box-shadow: 10px 10px 20px rgba(0,0,0,0.1);
+        }
+        #container{
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .display_image{
+            display: inline-block;
+            width: 150px;
+            height: 150px;
+        }
+        .cart{
+            background-color: rgb(128, 154, 12);
+            color: rgb(17, 3, 3);
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+        }
+        *{
+          margin: 0;
+          padding: 0;
+        }
+        .display_items:hover{
+            transform: Scale(1,1.050)translate(0px,-5px);
+        }
+        #dec,#inc{
+                background-color: black;
+                color: white;
+                width: 20px;
+                height: 20px;
+                margin: 10px;
+                border-radius: 100%;
+                cursor: pointer;
+        }
+        .layout{
+            width: 100%;
+        }
+        .layout .d1{
+            display: inline-block;
+            width: 60%;
+        }
+        .layout .d2{
+            vertical-align: top;
+            display: inline-block;
+            width: 30%;
+        }
+        #table_items{
+            border-collapse: collapse;
+        }
+        #table_items th{
+            color: #100808;
+            padding: 8px;
+            text-align: center;
+        }
+        #table_items td {
+            padding: 8px;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .d2{
+            box-shadow: 10px 10px 20px rgba(0,0,0,0.1);
+            border-radius: 5%;
+        }
+        .d2 #list { 
+            text-align: left;
+        }
+        #cash{
+            font-weight: bold;
+           font-size: 20px;
+         }
+        li{
+            list-style: none;
+        }
+        @media screen and (max-width:720px) {
+            .layout{
+                display: flex;
+             flex-direction:column;
+                 
+            }
+            .layout .d2{
+                width:50%
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <div class="d1">
+        <h1>Point of Scale</h1>
+        <div id="container"></div>
+    </div>
+    <div class="d2">
+        <h1 id="list">Cart<span id="selected_items">0</span></h1>
+       <table  id="table_items">
+         <tr>
+           <th>Tittle</th>
+           <th>price</th>
+           <th>Qunatity</th>
+           <th>Total price</th>
+         </tr>
+    </table>
+    <h2>Total:<span id="cash">0:00</span></h2>
+    </div>
+    </div>
+    <script>
+        var c=0
+        var products=[]
+        var cartItems=[]
+        var http=new XMLHttpRequest()
+        http.open("GET","https://dummyjson.com/products?limit=15&skip=15")
+        http.send()
+         http.onload = function () {
+            var data = JSON.parse(http.responseText);
+            products = data.products;
+            products = products.map(product => ({
+              ...product,
+              quantity: 0
+            }));
+            display_items()
+        } 
+        function display_items(){
+            products.forEach(function(item,index){
+                var box=document.createElement("div")
+                let pic=document.createElement("img")
+                pic.src=item.thumbnail
+                pic.classList.add("display_image")
+                box.appendChild(pic)
+                let item_name=document.createElement("h5")
+                item_name.innerText=item.title
+                box.appendChild(item_name)
+                let cost=document.createElement("p")
+                cost.innerText=item.price
+                box.appendChild(cost)
+                let btn=document.createElement("button")
+                btn.innerText="ADD TO CART"
+                btn.classList.add("cart")
+                box.appendChild(btn)
+                box.classList.add("display_items")
+                document.getElementById("container").appendChild(box)
+                btn.addEventListener("click",function(){
+                          cart_data(index)
+                          changeQuantity(btn,index)
+                })
+            })  
+        }
+
+        function cart_data(index){
+            let item=products[index]
+            item.quantity=1
+                    var ntr=document.createElement("tr")
+                    var product_name=document.createElement("td")
+                    product_name.innerText=item.title
+                    ntr.appendChild(product_name)
+                    var product_price=document.createElement("td")
+                    product_price.innerText=item.price
+                    ntr.appendChild(product_price)
+                    var items=document.createElement("td")
+                    items.innerText=item.quantity
+                    ntr.appendChild(items)
+                    var price=document.createElement("td")
+                    price.innerText=item.price*item.quantity
+                    ntr.appendChild(price)
+                    document.getElementById("table_items").appendChild(ntr)
+                    var obj={name:item.title,
+                        bill:Number(item.price),
+                        quantity:item.quantity,
+                        }
+                    cartItems.push(obj)
+                    document.getElementById("selected_items").innerText=cartItems.length
+                    update_object_table(item)
+                    
+
+        }
+
+        function changeQuantity(btn,index){
+            let item=products[index]
+                    var nli=document.createElement("li")
+                     let dec_button=document.createElement("button")
+                     dec_button.innerText="-"
+                     dec_button.id="dec"
+                     dec_button.disabled =false;
+                     nli.appendChild(dec_button)
+                     let no_items=document.createElement("span")
+                     no_items.innerText=1
+                     nli.appendChild(no_items)
+                     let inc_button=document.createElement("button")
+                     inc_button.innerText="+"
+                     inc_button.id="inc"
+                     nli.appendChild(inc_button)
+                     btn.replaceWith(nli)
+                     dec_button.addEventListener("click",function(){
+                        if(item.quantity==0)                     
+                        {
+                            dec_button.disabled=true
+                        }
+                        else
+                        {
+                          no_items.innerText=--item.quantity
+                          update_object_table(item)
+                        }  
+                     })
+                     inc_button.addEventListener("click",function(){
+                          no_items.innerText=++item.quantity
+                          update_object_table(item)
+                          if(item.quantity>1)
+                          {
+                            dec_button.disabled=false
+                          }
+                     })
+        }
+
+        function update_object_table(item){
+        var t=0
+            var updateAmount=item.quantity*item.price
+            let rows = document.querySelectorAll("#table_items tr");
+            rows.forEach(function(row){
+           if (row.cells[0].innerText === item.title) 
+           {
+                row.cells[2].innerText = item.quantity;
+                row.cells[3].innerText = updateAmount;
+
+           }
+          });
+            products.forEach(function(a){
+                t=t+a.price*a.quantity
+            })
+            document.getElementById("cash").innerText=parseFloat(t.toFixed(2))
+
+        }
+    </script>
+</body>
+</html>

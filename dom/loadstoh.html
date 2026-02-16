@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        #no{
+            border: 2px solid black;
+            margin: 2px;
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+    <ul id="no">
+
+    </ul>
+    <script>
+        const heroines=[{name:"me",year:2000},{name:"you",year:2001},{name:"anna",year:2006},{name:"achu",year:2002}];
+        for(var i=0;i<heroines.length;i++)
+        {
+              var nli=document.createElement("li")
+              var hname=document.createElement("h1")
+              hname.innerText=heroines[i].name
+              var hyear=document.createElement("h2")
+              hyear.innerText=heroines[i].year
+              nli.appendChild(hname)
+              nli.appendChild(hyear)
+              document.getElementById("no").appendChild(nli)
+        }
+    </script>
+</body>
+</html>

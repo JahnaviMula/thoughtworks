@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+    <style>
+    .green{
+    background-color: green;
+    color: rgb(8, 15, 231);
+  }
+   .red{
+    background-color: rgb(245, 7, 7);
+    color: rgb(43, 6, 205);
+  }
+</style>
+</head>
+<body>
+    <input type="button"  id="btn" value="green" onclick="colorchange()" color="green">
+    <script>
+            var c=0
+          function colorchange()
+          {
+            if(c%2==0){
+                document.getElementById("btn").classList.remove("red")
+                document.getElementById("btn").classList.add("green")
+                document.getElementById("btn").value="green"
+                c=c+1
+            }
+            else
+            {
+                document.getElementById("btn").classList.remove("green")
+                document.getElementById("btn").classList.add("red")
+                document.getElementById("btn").value="red"
+                 c=c+1
+            }
+          }
+    </script>
+</body>
+</html>

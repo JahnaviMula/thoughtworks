@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<head>
+    <style>
+       .layout{
+        position: relative;
+       }
+      .first{
+        width: 100%;
+        background-image: url("https://tse4.mm.bing.net/th/id/OIP.sDQSExdBFYN2TJAhfjnJ5gHaD0?pid=Api&P=0&h=180");
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        height: 800px;
+        z-index: -2;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        position: relative;
+
+      }
+      .first::before{
+        content: "";
+        position: absolute;
+          inset: 0;
+          backdrop-filter: blur(8px);
+         background: rgba(0,0,0,0.3); 
+          z-index: 1;
+      }
+       .first h1,.first p{
+        color: white;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 500;
+        z-index: 2;
+        line-height: 1.1;
+      }
+      .second .about h1,.second ,.about p{
+         z-index: 3;
+         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+         font-weight: 300;
+         justify-self: center;
+         width:60%;
+         background-color:#FCFDFF;
+         text-align: center;
+         border-radius: 20px;
+        line-height: 1.7;
+      }
+    .passion ul{
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+    }
+    .passion {
+         background-color: #F5F4F4;
+         padding: 10px;
+         gap:20px;
+    }
+    #image{
+        width:100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: rgb(109, 76, 76);
+        justify-self: center;
+    }
+    li{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 300;
+        line-height: 1.7;
+    }
+    .contact{
+        background: url("https://tse1.mm.bing.net/th/id/OIP.m5pI_o0RNpqsDVbL9pXVrgHaEO?pid=Api&P=0&h=180");
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 600px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .contact .mm{
+        display: flex;
+        flex-direction: column;
+        gap:10px;
+        width:30%;
+        background-color: rgba(0,0,0,0.3);
+        z-index: 1;
+        text-align: left;
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+       
+    }
+    .contact .mm input{
+        border-radius: 5px;
+        padding: 10px;
+        background-color: rgba(239, 174, 9, 0.2);
+        border: none;
+        width: 90%;
+    }
+    button{
+        border-radius: 20px;
+        color: black;
+        background-color: white;
+        border: none;
+        padding: 10px;
+        width: 90%;
+    }
+    button:hover{
+        background-color:rgba(0,0,0,0.1) ;
+        color: white;
+    }
+    .footer{
+        width: 100%;
+        background-color:rgba(0,0,0, 0.6);
+        height: 200px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer h1,
+    .footer p{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 300;
+    }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <div class="first">
+            <h1>Hi,I am Jahnavi Reddy Mula</h1>
+            <p>Web Developer & Python Programmer(beginner)</p>
+        </div>
+        <div class="second">
+            <div class="about">
+                <h1>A Little About me</h1>
+                 <div id="image"></div>
+                <p>I'm Jahnavi.I’m a passionate front-end learner who enjoys building clean, responsive, and user-friendly web interfaces. I work with HTML, CSS, and basic JavaScript, and I love experimenting with modern UI effects like layouts, backgrounds, and visual details. I’m always curious to understand how things work, not just make them work, and I’m continuously improving my skills by practicing and learning every day.</p>
+                <p>When I am not coding,I enjoy to play with my freinds</p>
+            </div>
+        </div>
+        <div class="passion">
+            <ul type="none">
+                 <li>👉I’m a student who is passionate about learning coding and building simple, responsive web pages using HTML, CSS, and JavaScript.</li>
+                 <li>👉I’m a student who enjoys learning coding, working with front-end technologies, and exploring Python programming.</li>
+                 <li>👉I’m passionate about combining creativity with code to build visually appealing and functional web experiences.</li>
+            </ul>     
+        </div>
+        <div class="contact">
+            <form class="mm">
+                Name:<br><input type="text"><br>
+                Email:<br><input type="email"><br>
+                Message:<br><input type="text"><br>
+                <button>Send Message</button>
+            </form>
+        </div>
+        <div class="footer">
+            <h1>🤗Thank you😊</h1>
+            <p>&copy;2026 copy rights reserved</p>
+        </div>
+    </div>
+</body>
+</html>

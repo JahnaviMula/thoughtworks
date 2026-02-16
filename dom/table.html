@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        .abcd{
+            border:1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var ar=[{"name":"praveensir","age":36,"gender":"male","salary":10000,"city":"hyd"},
+                 {"name":"janu","age":16,"gender":"female","salary":5000,"city":"hyd"},
+                 {"name":"achu","age":26,"gender":"male","salary":100000,"city":"hyd"},
+                {"name":"xyz","age":46,"gender":"male","salary":2000,"city":"hyd"},
+                {"name":"abc","age":56,"gender":"male","salary":3000,"city":"hyd"                  
+               }]
+               var tab=document.createElement("table")
+               tab.border="1"
+               var header_row=document.createElement("tr")
+               for(let key in ar[0])
+               {
+                  var row=document.createElement("th")
+                  row.innerText=key
+                  header_row.appendChild(row) 
+               }
+               tab.appendChild(header_row)
+               ar.forEach(function(a)
+              {
+                 var data_row=document.createElement("tr")
+                   for(let key in a)
+                   {   var d=document.createElement("td")
+                        d.innerText=a[key]
+                        data_row.appendChild(d)
+                   }
+                tab.appendChild(data_row)
+              })
+               document.body.appendChild(tab)
+    </script>
+</body>
+</html>

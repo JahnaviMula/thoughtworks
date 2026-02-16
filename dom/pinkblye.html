@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        .girls{
+            background-color: pink;
+        }
+        .boys{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <script>
+         var students = [
+                                {
+                                name:'jaya',
+                                gender:'female',
+                                place:'gachibowli',
+                                },
+                                {
+                                name:'dasu',
+                                gender:'male',
+                                place:'kphb'
+                                },
+                                {
+                                name:'swati', gender:'female',place:'pune'},{name:'pallavi',gender:'female',place:'assam'},{name:'kiran', gender:'male',place:'kondapur'}, {name:'thirumala',gender:'male',place:'madhapur'}, {name:'priya',gender:'female', place:'hitech'},
+
+                            ]
+                  for(var i=0;i<students.length;i++)
+                   {
+                        var nli=document.createElement("li")
+                       var nam=document.createElement("h1")
+                       nam.innerText=students[i].name
+                        var gen=document.createElement("p")
+                       gen.innerText=students[i].gender
+                        var place=document.createElement("p")
+                       place.innerText=students[i].place
+                       nli.appendChild(nam)
+                       nli.appendChild(gen)
+                       nli.appendChild(place)
+                       if(students[i].gender==="male")
+                       { nli.classList.add("boys")
+                       document.body.appendChild(nli)
+                       }
+                       else
+                       {
+                         nli.classList.add("girls")
+                       document.body.appendChild(nli)
+                       }
+                   }         
+    </script>
+</body>
+</html>

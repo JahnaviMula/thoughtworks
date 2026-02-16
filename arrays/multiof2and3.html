@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        var ar=[1,2,3,4,5,6,7,8,9,25,18]
+        function fun(ar)
+        {
+           var x=ar.filter(function(a)
+           {
+             if(a%2==0 && a%3==0)
+              return a
+           })
+           console.log(x)
+        }
+        fun(ar)
+    </script>
+</body>
+</html>

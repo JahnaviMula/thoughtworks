@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head></head>
+<body>
+    <script>
+        var heros=[ { hero: "Venkatesh", debutMovie: "Kaliyuga Pandavulu", year: 1986 },
+  { hero: "Pawan Kalyan", debutMovie: "Akkada Ammayi Ikkada Abbayi", year: 1996 },
+  { hero: "Mahesh Babu", debutMovie: "Raja Kumarudu", year: 1999 },
+  { hero: "Ravi Teja", debutMovie: "Nee Kosam", year: 1999 },
+  { hero: "Jr NTR", debutMovie: "Ninnu Choodalani", year: 2001 },
+  { hero: "Prabhas", debutMovie: "Eeswar", year: 2002 },
+  { hero: "Nithiin", debutMovie: "Jayam", year: 2002 },
+  { hero: "Allu Arjun", debutMovie: "Gangotri", year: 2003 },
+  { hero: "Ram Charan", debutMovie: "Chirutha", year: 2007 },
+  { hero: "Ram Pothineni", debutMovie: "Devadasu", year: 2006 },
+  { hero: "Nani", debutMovie: "Ashta Chamma", year: 2008 },
+  { hero: "Vijay Deverakonda", debutMovie: "Nuvvila", year: 2011 }]
+     heros.forEach(function(a)
+      {
+        var nli=document.createElement("li")
+        var nameli=document.createElement("h1")
+          nameli.innerText=a.hero
+          nli.appendChild(nameli)
+        var debli=document.createElement("p")
+          debli.innerText=a.debutMovie
+          nli.appendChild(debli)
+        var yearli=document.createElement("p")
+         yearli.innerText=a.year
+          nli.appendChild(yearli)
+         document.body.appendChild(nli)     
+      })
+    </script>
+</body>
+</html>

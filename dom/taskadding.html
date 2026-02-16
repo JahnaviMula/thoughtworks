@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head></head>
+<body>
+    <input type="text" id="txt">
+    <input type="button" id="btn" onclick="fun()" value="submit">
+    <script>
+        function fun(){
+            var c=0
+            var nli=document.createElement("li")
+            var pele=document.createElement("p")
+            pele.id="work"
+            pele.innerText=document.getElementById("txt").value
+            nli.appendChild(pele)
+            var done_btn=document.createElement("button")
+            done_btn.innerText="done"
+            done_btn.id="doneid"
+            nli.appendChild(done_btn)
+            var del=document.createElement("button")
+            del.innerText="delete"
+            del.id="delid"
+            del.disabled=true
+            nli.appendChild(del)
+            document.body.appendChild(nli)
+            done_btn.addEventListener("click",function(){
+                if(c%2==0)
+               {
+                   done_btn.innerText="undo"
+                  del.disabled=false
+                    pele.style.textDecoration = "line-through";
+                  c=c+1
+               }
+               else
+               {
+                  done_btn.innerText="done"
+                 del.disabled=true
+                    pele.style.textDecoration = "none";
+                  c=c+1
+               }
+               
+            })
+            del.addEventListener("click",function(){
+                nli.remove()
+            })
+        }
+    </script>
+</body>
+</html>

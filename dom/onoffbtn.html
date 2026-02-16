@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        .boxapply{
+              width: 50px;
+             height: 50px;
+             background-color: rgb(21, 224, 17);
+
+        }
+        .boxnoapply{
+             width: 50px;
+             height: 50px;
+             background-color: white;
+        }
+        .btnadd{
+            color: red;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div id="b"  class="boxnoapply"></div>
+    <br>
+    <input type="button" value="on" onclick="fun1()" id="onbtn" >
+    <input type="button" value="off" onclick="fun2()" id="offbtn">
+    <script>
+       function fun1()
+       {
+            document.getElementById("b").classList.add("boxapply")
+            document.getElementById("b").classList.remove("boxnoapply")
+            document.getElementById("onbtn").classList.add("btnadd")
+            document.getElementById("offbtn").classList.remove("btnadd")
+       }
+          function fun2()
+       {
+            document.getElementById("b").classList.remove("boxapply")
+            document.getElementById("b").classList.add("boxnoapply")
+            document.getElementById("onbtn").classList.remove("btnadd")
+            document.getElementById("offbtn").classList.add("btnadd")
+       }
+    </script>
+</body>
+</html>

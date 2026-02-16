@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <img id="bulb" src="bulbon.jpg">
+    <input type="button" value="click" onclick="fun()">
+    <script>
+        var c=0
+        function fun(){
+            if(c%2==0)
+           {
+               document.getElementById("bulb").src="bulboff.jpg"
+               c=c+1
+           }
+           else{
+               document.getElementById("bulb").src="bulbon.jpg"
+               c=c+1
+           }
+        }
+    </script>
+</body>
+</html>

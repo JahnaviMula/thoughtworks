@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <script>
+    var h=+prompt("enter hours:")
+    var m=+prompt("enter minutes:")
+    var s=+prompt("enter seconds")
+    if((h>=0 && h<=23))
+    {
+        if(m>=0 && m<=59)
+       {
+          if(s>=0 && s<=59)
+            console.log("valid time")
+          else
+            console.log("invalid seconds")
+          
+       }
+       else
+         console.log("in valid minutes")
+    }
+    else
+       console.log("in valid hours")
+     
+    </script>
+  </body>
+</html>

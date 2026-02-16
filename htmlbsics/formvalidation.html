@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head></head>
+<body>
+    <form onsubmit="fun2()">
+    Name:<input type="text" minlength="4" maxlength="18" required size="10"><br>
+    Password:<input type="text" readonly value="janu123"><br>
+    Gender:<input type="radio" name="gen" checked>Female
+           <input type="radio" name="gen" >Male
+           <input type="radio" name="gen" >other<br>
+    Skills: <div style="margin-left: 60px;" id="skill" >
+            <input type="checkbox">C programming<br>
+           <input type="checkbox">Java programming<br>
+           <input type="checkbox">Python programming<br>
+           <input type="radio" onchange="fun()">other<br>
+        </div>
+        <input type="submit" value="submit">
+     </form>   
+        <script>
+           function fun(){
+             var x=document.createElement("input")
+             x.type="text"
+             x.placeholder="enter your skills"
+             x.multiple
+             document.getElementById("skill").appendChild(x)
+           }
+           function fun2(){
+            alert("form submitted")
+           }
+        </script>
+</body>
+</html>

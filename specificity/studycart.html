@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        html{
+          scroll-behavior: smooth;
+    }
+        body{
+            display: flex;
+            flex-direction: column;
+        }
+        .study{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            gap:10px;
+            padding: 10px;
+            background-color: rgb(240, 232, 222);
+           text-align: center;
+        }
+        p{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 20px;
+        }
+        h3{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: rgb(255, 132, 1);
+            line-height: 20px;
+        }
+        b,li{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        a{
+            display: block;
+            text-decoration: none;
+            color: rgb(17, 19, 4);
+        }
+        a:hover{
+            color: blue;
+        }
+        .web,
+        .python,
+        .java,
+        .Reactjs{
+            width: 30%;
+            border-radius: 1em;
+            padding: 1%;
+            background-color: rgb(250, 252, 252);
+        }
+        .jobs{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            background-color: rgb(240, 232, 222);
+           text-align: center;
+           padding: 10px;
+        }
+        .webjob,
+        .pythonjob,
+        .javajob,
+        .reactjob
+        {
+            width: 45%;
+            border-radius: 1em;
+            padding: 1%;
+            background-color: rgb(250, 252, 252);
+            border: 1px solid white;
+        }
+        .navbar{
+            position: sticky;
+            top:0px;
+            background-color: navy;
+            display: flex;
+            justify-content: right;
+        }
+        .navbar a{
+            color: white;
+            padding: 20px;
+            gap: 20px;
+        }
+       .navbar a:hover{
+            color: yellow;
+            cursor: pointer;
+        }
+        footer{
+    text-align: center;
+    background: navy;
+    color: white;
+    padding: 10px;
+     }
+     @media(max-width:768px){
+    .web, .python, .java, .Reactjs,
+    .webjob, .pythonjob, .javajob, .reactjob{
+        width: 100%;
+    }
+    .navbar{
+        justify-content: center;
+    }
+}
+
+</style>
+<body>
+    <div class="navbar">
+        <a href="#nn">Technologies</a>
+        <a href="#mm">Job Opprtunities</a>
+    </div>
+    <div class="study" id="nn">
+    <div class="web">
+        <h3>🌐 Web Development</h3>
+        <p>Web development helps students create simple websites and apps, gives good job and freelance chances, and lets them build useful projects that people can use in real life.</p>
+         <h3>Famous Websites to learn web development</h3>
+        <a href="https://www.w3schools.com" target="_blank">W3schools</a>
+        <a href="https://developer.mozilla.org" target="_blank">MDN docs</a>
+        <a href="https://www.freecodecamp.org" target="_blank">Freecode Camp</a>
+    </div>
+    <div class="python">
+        <h3>🐍 Python</h3>
+        <p>Python is a powerful and easy language that helps students build apps, automate tasks, analyze data, and start a tech career faster with less effort.</p>
+        <h3>Famous WebSites to learn python</h3>
+        <a href="https://www.python.org" target="_blank">Python</a>
+        <a href="https://www.w3schools.com/python" target="_blank">W3school</a>
+        <a href="https://www.freecodecamp.org" target="_blank">FreeCodeCamp</a>
+    </div>
+    <div class="java">
+        <h3>☕ Java</h3>
+        <p>Java is a powerful and popular programming language used to build secure applications, Android apps, and large software systems, making it a great choice for students and future careers.</p>
+        <h3>Famous WebSites to learn java</h3>
+        <a href="https://docs.oracle.com/javase" target="_blank">Oracle</a>
+        <a href="https://www.w3schools.com/java" target="_blank">W3school</a>
+        <a href="https://www.geeksforgeeks.org/java" target="_blank">geeksforgeeks</a>
+    </div>
+    <div class="Reactjs">
+        <h3>⚛️ React JS</h3>
+        <p>React JS is a popular JavaScript library used to build fast, interactive, and user-friendly websites and applications, making it a top skill for modern web developers.</p>
+        <h3>Famous WebSites to learn React JS</h3>
+        <a href="https://react.dev" target="_blank">React Official Docs</a>
+        <a href="https://www.freecodecamp.org" target="_blank">freeCodeCamp</a>
+        <a href="https://www.w3schools.com/react" target="_blank">W3Schools</a>
+    </div>
+    </div>
+    <div class="jobs" id="mm">
+        <div class="webjob">
+            <h3>Jod opprtunities of web development</h3>
+            <ul>
+             <li><b>Front-End Developer</b> – Works with HTML, CSS, JavaScript, React  
+                    <br>💰 Salary: ₹3 – 8 LPA
+             </li>
+             <li><b>Back-End Developer</b> – Works with server, database, APIs  
+                 <br>💰 Salary: ₹4 – 10 LPA
+              </li>
+             <li><b>Full-Stack Developer</b> – Handles both front-end & back-end  
+                   <br>💰 Salary: ₹6 – 15 LPA
+             </li>
+             <li><b>Web Designer / UI Designer</b> – Focus on layout, colors, user experience  
+                  <br>💰 Salary: ₹2.5 – 6 LPA
+             </li>
+            <li><b>UI/UX Designer</b> – Improves user interaction and usability  
+                 <br>💰 Salary: ₹4 – 9 LPA
+             </li>
+             <li><b>Freelancer / Remote Web Developer</b> – Work from home, project-based  
+                 <br>💰 Income: ₹30,000 – ₹2,00,000+ per month
+            </li>
+            <li><b>Internships (Students/Freshers)</b> – Learn while earning  
+                <br>💰 Stipend: ₹8,000 – ₹25,000 per month
+            </li>
+            </ul>
+        </div>
+        <div class="pythonjob">
+            <h3>Jod opprtunities for python</h3>
+            <ul>
+               <li><b>Python Developer</b> – Builds applications, automation tools, and software  
+                       <br>💰 Salary: ₹4 – 10 LPA
+                </li>
+                <li><b>Data Analyst</b> – Works with data, reports, and visualizations  
+                    <br>💰 Salary: ₹4 – 8 LPA
+                </li>
+                 <li><b>Data Scientist</b> – Uses Python for data analysis and machine learning  
+                        <br>💰 Salary: ₹6 – 15 LPA
+                 </li>
+                  <li><b>Machine Learning Engineer</b> – Builds smart systems and AI models  
+                         <br>💰 Salary: ₹7 – 18 LPA
+                   </li>
+                <li><b>Automation Engineer</b> – Automates tasks and testing using Python  
+                     <br>💰 Salary: ₹4 – 9 LPA
+                </li>
+               <li><b>Web Developer (Python)</b> – Builds websites using Django or Flask  
+                      <br>💰 Salary: ₹4 – 10 LPA
+                </li>
+                 <li><b>Freelancer / Remote Python Developer</b> – Project-based work from home  
+                    <br>💰 Income: ₹30,000 – ₹2,00,000+ per month
+                </li>
+                <li><b>Internships (Students/Freshers)</b> – Learn Python with real projects  
+                    <br>💰 Stipend: ₹8,000 – ₹30,000 per month
+                </li>
+             </ul>
+        </div>
+        <div class="javajob">
+            <h3>Job opprtunities for Java</h3>
+            <ul>
+               <li><b>Java Developer</b> – Builds software, web apps, and enterprise applications  
+                <br>💰 Salary: ₹4 – 10 LPA
+              </li>
+               <li><b>Backend Developer (Java)</b> – Works with server-side logic, APIs, databases  
+                     <br>💰 Salary: ₹5 – 12 LPA
+                </li>
+              <li><b>Android App Developer</b> – Builds Android apps using Java  
+                  <br>💰 Salary: ₹4 – 10 LPA
+               </li>
+              <li><b>Full-Stack Developer (Java)</b> – Uses Java with front-end technologies  
+                  <br>💰 Salary: ₹6 – 15 LPA
+              </li>
+              <li><b>Software Engineer</b> – Develops and maintains large software systems  
+                 <br>💰 Salary: ₹5 – 14 LPA
+              </li>
+            <li><b>Enterprise Application Developer</b> – Works on banking and large-scale systems  
+                <br>💰 Salary: ₹6 – 18 LPA
+            </li>
+           <li><b>Freelancer / Remote Java Developer</b> – Project-based work from home  
+                <br>💰 Income: ₹30,000 – ₹2,00,000+ per month
+           </li>
+            <li><b>Internships (Students/Freshers)</b> – Learn Java with real projects  
+                 <br>💰 Stipend: ₹8,000 – ₹30,000 per month
+            </li>
+           </ul>
+        </div>
+        <div class="reactjob">
+            <h3>Job opprtunities for ReactJS</h3>
+            <ul>
+               <li><b>React JS Developer</b> – Builds fast and interactive user interfaces  
+                    <br>💰 Salary: ₹4 – 10 LPA
+               </li>
+                <li><b>Front-End Developer</b> – Works on UI using React, HTML, CSS, JavaScript  
+                  <br>💰 Salary: ₹3 – 8 LPA
+               </li>
+               <li><b>UI Developer</b> – Converts designs into responsive React components  
+                 <br>💰 Salary: ₹4 – 9 LPA
+              </li>
+              <li><b>Full-Stack Developer (React)</b> – Uses React with Node.js / backend tech  
+                <br>💰 Salary: ₹6 – 15 LPA
+             </li>
+             <li><b>Web Application Developer</b> – Builds modern web apps and dashboards  
+                <br>💰 Salary: ₹5 – 12 LPA
+             </li>
+             <li><b>Freelancer / Remote React Developer</b> – Project-based work from home  
+                <br>💰 Income: ₹30,000 – ₹2,00,000+ per month
+             </li>
+             <li><b>Internships (Students/Freshers)</b> – Learn React with real projects  
+                <br>💰 Stipend: ₹8,000 – ₹30,000 per month
+             </li>
+     </ul>
+        </div>
+    </div>
+    <footer>
+    <p>© 2026 Student Learning Portal | Designed by Me</p>
+   </footer>
+</body>
+</html>

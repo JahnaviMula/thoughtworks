@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head></head>
+<body>
+     <input type="text" id="todo">
+     <button onclick="adding()">add to list</button>
+    <script>
+         var ar=[]
+         function adding()
+         {
+            var nli=document.createElement("li")
+            var x=document.getElementById("todo").value 
+            ar.push(x)
+            var y=document.createElement("p")
+            y.innerText=x
+            nli.appendChild(y)
+            var btn=document.createElement("button")
+            btn.innerText="delete"
+            btn.onclick=function()
+            {
+               var ind=ar.findIndex(function(item)
+               {
+                  return item===x;
+               })
+               ar.splice(ind,1)
+               nli.remove();
+            }
+            nli.appendChild(btn)
+            document.body.appendChild(nli)
+         }
+    </script>
+</body>
+</html>

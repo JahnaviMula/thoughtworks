@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+    <style>
+    #btn{
+    background-color: green;
+    color: rgb(41, 243, 23);
+  }
+</style>
+</head>
+<body>
+    <input type="button"  id="btn" value="white" onclick="colorchange()">
+    <h1 id="text">false</h1>
+    <script>
+            var c=0
+          function colorchange()
+          {
+            if(c%2==0){
+
+                document.getElementById("text").innerText="true"
+                c=c+1
+            }
+            else
+            {
+                document.getElementById("text").innerText="false"
+                 c=c+1
+            }
+          }
+    </script>
+</body>
+</html>

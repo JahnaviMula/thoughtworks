@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+  <head><tittle></tittle></head>
+  <body>
+    <script>
+        var a=+prompt("enter amount")
+        tax=0
+        if (a>=10000)
+       {
+            a=a-10000
+            if(a>20000)
+            {
+                a=a-20000
+                tax=tax+20000*0.10
+                if(a!=0)
+                 tax=tax+a*0.2
+            }
+            else
+              tax=tax+a*0.1
+       } 
+       else
+        console.log("no tax")
+       console.log(tax)
+    </script>
+  </body>
+</html>

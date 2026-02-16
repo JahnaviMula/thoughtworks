@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <h1>Occupied:<span id="o">0</span></h1>
+    <h1>Available:<span id="a">8</span></h1>
+    <script>
+        for(let i=0;i<8;i++)
+       {      let btn=document.createElement("button")
+              let chair=document.createElement("img")
+              chair.src="chair.jpg"
+              btn.appendChild(chair)
+              document.body.appendChild(btn)
+              chair.addEventListener("click",function(){
+                  let available = parseInt(document.getElementById("a").innerText);
+                  let occupied = parseInt(document.getElementById("o").innerText);
+               if (!btn.disabled) {
+                       document.getElementById("a").innerText = available - 1;
+                        document.getElementById("o").innerText = occupied + 1;
+                         btn.disabled = true;
+                       btn.style.opacity = "0.5";
+                 } else {
+                  document.getElementById("a").innerText = available + 1;
+                   document.getElementById("o").innerText = occupied - 1;
+                     btn.disabled = false;
+                  btn.style.opacity = "1";
+          }
+              })
+       }
+    
+    </script>
+</body>
+</html>

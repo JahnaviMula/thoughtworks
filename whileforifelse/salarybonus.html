@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+ <head>
+    <title></title>
+ </head>
+  <body>
+     <script>
+        var sal=+prompt("enter salary")
+        var exp=+prompt("enter experience")
+        var rat=+prompt("enter rating")
+        var bonus
+        if(rat>=4)
+       {
+           if(exp>=10)
+            bonus=20
+           else
+             bonus=10
+       }
+       else if(rat==3)
+       {
+         if (exp>=10)
+            bonus=10
+         else
+          bonus=5
+       }
+       else
+         bonus=0
+        bamount = (sal * bonus) / 100
+        console.log("bonus amount:",bamount);
+        console.log("total amount:",sal+bamount)
+       </script>
+       </body>
+</html>        

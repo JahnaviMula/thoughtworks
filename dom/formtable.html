@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<head> 
+</head>
+<body>
+    <form>
+    Name:<input type="text" id="nm" name="first"><br>
+    Number:<input type="text" id="nm1" name="phone"><br>
+    email:<input type="text" id="nm2" name="gmail"><br>
+    <input type="button" value="add to contact" onclick="fun()" id="addto">
+    </form>
+    <table border="1" id="tab">
+        <tr>
+            <th>name</th>
+            <th>number</th>
+            <th>email</th>
+            <th>edit</th>
+            <th>delete</th>
+        </tr>
+    </table>
+    <script>
+           var editRow;           
+        function fun(){
+            if(document.getElementById("addto").value!=="update")
+          {
+              var nrw=document.createElement("tr")
+              var nad=document.createElement("td")
+              nad.innerText=document.getElementById("nm").value
+              nrw.appendChild(nad)
+              var nud=document.createElement("td")
+              nud.innerText=document.getElementById("nm1").value
+              nrw.appendChild(nud)
+              var emd=document.createElement("td")
+              emd.innerText=document.getElementById("nm2").value
+              nrw.appendChild(emd)
+              var edttd=document.createElement("td")
+              var btn=document.createElement("button")
+              btn.innerText="edit"
+              edttd.appendChild(btn)
+              nrw.appendChild(edttd)
+              var deltd=document.createElement("td")
+              var del=document.createElement("button")
+              del.innerText="delete"
+              deltd.appendChild(del)
+              nrw.appendChild(deltd)
+             document.getElementById("tab").appendChild(nrw)
+             del.addEventListener("click",function(){
+                nrw.remove()
+             })
+             btn.addEventListener("click",function(){
+                document.getElementById("nm").value=nad.innerText
+                document.getElementById("nm1").value=nud.innerText
+                document.getElementById("nm2").value=emd.innerText
+                var x=document.getElementById("addto")
+                x.value="update"
+                editRow=nrw
+                })
+        }
+        else
+        {   
+                editRow.cells[0].innerText = document.getElementById("nm").value;
+                editRow.cells[1].innerText = document.getElementById("nm1").value;
+                editRow.cells[2].innerText = document.getElementById("nm2").value;
+                document.getElementById("addto").value="add to contact"
+                return
+       }
+}
+    </script>
+</body>

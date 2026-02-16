@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form name="sform" onsubmit="handleSubmit(event)">
+        Full Name:
+        <br>
+        <input type="text" name="first">
+        <br>
+        Gender:
+        <br>
+        <input type="radio" name="gender" value="F" id="female"><label for="female">:Female</label>
+        <input type="radio" name="gender" value="M"><label>:Male</label>
+        <input type="radio" name="gender" value="O"><label>:Others</label>
+        <br>
+        Technology:
+        <br>
+
+        <input type="checkbox" name="technology" value="js">:Javascript
+        <input type="checkbox" name="technology" value="rjs">:ReactJS
+        <input type="checkbox" name="technology" value="ajs">:Angular
+        <input type="checkbox" name="technology" value="njs">:NodeJS
+        <br>
+        Address:
+        <br>
+
+        <textarea name="area"></textarea>
+        <br>
+        <button>Show Student</button>
+    </form>
+     <table border="1" id="tab">
+        <tr>
+            <th onclick="sortdata('fullname')">fullname</th>
+            <th onclick="sortdata('gender')">gender</th>
+            <th onclick="sortdata('technologies')">technology</th>
+            <th onclick="sortdata('address')">address</th>
+        </tr>
+     </table>
+    <script>
+         var Student_array=[]
+        var newStudent = {
+            fullname: '',
+            gender: "",
+            technologies: [],
+            address: ""
+        }
+        function handleSubmit(ev) {
+            ev.preventDefault()
+            newStudent.fullname=document.sform.first.value
+             var tec=""
+            document.sform.technology.forEa ch(function(a){
+                           if(a.checked){
+                              tec=tec+","+a.value
+                           }
+            })
+            newStudent.technologies=tec
+            newStudent.address=document.sform.area.value
+            newStudent.gender=document.sform.gender.value
+            console.log(newStudent)
+            Student_array.push(newStudent)
+            console.log(Student_array)
+        }
+    </script>
+</body>
+
+</html>

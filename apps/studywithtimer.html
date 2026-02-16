@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<body>
+     <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+#timer{
+    margin-bottom: 20px;
+}
+
+#timer h1{
+    color: white;
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+#box{
+    width: 400px;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    text-align: left;
+}
+
+#que{
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+#box p{
+    margin: 8px 0;
+}
+
+input[type="radio"]{
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+label{
+    cursor: pointer;
+}
+
+#btn,
+#btn2{
+    margin-top: 15px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: #667eea;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#btn:hover{
+    background-color: #5a67d8;
+}
+
+#btn:disabled{
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+     </style>
+     <div id="timer">
+        <h1>Timer:<span id="min">1</span>:<span id="sec">60</span></h1>
+     </div>
+     <div id="box">
+        <h4 id="que"><span>1.select your name</span></h4>
+        <p><input type="radio" name="mm" id="one"><label id="first" for="one">jahnavi</label></p><br>
+        <p><input type="radio" name="mm" id="two"><label id="second"  for="two" >reddy</label></p><br>
+        <p><input type="radio" name="mm" id="thr"><label id="third"  for="thr">achu</label></p><br>
+        <p><input type="radio" name="mm" id="four"><label id="fourth"  for="four">vasu</label><br>
+       <input type="button" onclick="fun()" value="next" id="btn">
+       <input type="button" onclick="fun2()" value="submit" id="btn2">
+     </div>
+    <script>
+     var questions = [
+               "Which tag is used to add image in the document?",
+               "Java is platform independent?",
+               "Which HTML tag is used to create a hyperlink?",
+               "Which language is used for styling web pages?",
+               "Which company developed Java?",
+               "Which symbol is used for comments in JavaScript?",
+               "Which HTML tag is used to create a table?",
+               "Which CSS property is used to change text color?",
+               "Which method is used to print in console (JavaScript)?",
+               "Which keyword is used to declare a variable in JS?",
+               "Which tag is used for largest heading in HTML?",
+               "Which operator is used for strict equality in JS?",
+               "Which function is used to display alert box?",
+               "Which HTML tag is used for inserting a line break?",
+               "Which CSS property controls font size?",
+               "Which loop runs at least once?",
+               "Which method converts JSON to object?",
+               "Which attribute is used for image source?",
+               "Which HTML element is used for unordered list?",
+               "Which event occurs when button is clicked?"
+          ];
+
+var answers = [
+               {1:"<img>", 2:"<a>", 3:"<html>", 4:"<body>"},
+               {1:"Yes", 2:"No", 3:"Only Windows", 4:"Only Linux"},
+               {1:"<a>", 2:"<link>", 3:"<href>", 4:"<p>"},
+               {1:"HTML", 2:"CSS", 3:"Python", 4:"C++"},
+               {1:"Microsoft", 2:"Apple", 3:"Sun Microsystems", 4:"Google"},
+               {1:"//", 2:"<!-- -->", 3:"#", 4:"**"},
+               {1:"<tr>", 2:"<table>", 3:"<td>", 4:"<th>"},
+               {1:"background-color", 2:"font-style", 3:"color", 4:"text-align"},
+               {1:"console.log()", 2:"print()", 3:"echo()", 4:"write()"},
+               {1:"var", 2:"let", 3:"const", 4:"All of the above"},
+               {1:"<h6>", 2:"<head>", 3:"<h1>", 4:"<title>"},
+               {1:"==", 2:"=", 3:"===", 4:"!="},
+               {1:"prompt()", 2:"alert()", 3:"confirm()", 4:"console.log()"},
+               {1:"<break>", 2:"<lb>", 3:"<br>", 4:"<line>"},
+               {1:"font-weight", 2:"font-size", 3:"text-style", 4:"size"},
+               {1:"for", 2:"while", 3:"do...while", 4:"foreach"},
+               {1:"JSON.parse()", 2:"JSON.stringify()", 3:"parseJSON()", 4:"toObject()"},
+               {1:"src", 2:"href", 3:"link", 4:"path"},
+               {1:"<ol>", 2:"<ul>", 3:"<li>", 4:"<list>"},
+               {1:"onhover", 2:"onchange", 3:"onclick", 4:"onmouse"}
+         ];
+        var i=1;
+        function fun(){
+            var radios = document.getElementsByName("mm");
+               for(var k = 0; k < radios.length; k++){
+                   radios[k].checked = false;
+             }
+
+            i=i+1
+            document.getElementById("que").innerText=i+"."+questions[i-2]
+            document.getElementById("first").innerText=answers[i-2][1]
+            document.getElementById("second").innerText=answers[i-2][2]
+            document.getElementById("third").innerText=answers[i-2][3]
+            document.getElementById("fourth").innerText=answers[i-2][4]
+            if(i==questions.length)
+           {
+               document.getElementById("btn").disabled=true;
+           }
+        } 
+           setInterval(function(){
+            document.getElementById("sec").innerText=Number(document.getElementById("sec").innerText)-1
+            if(document.getElementById("sec").innerText==0)
+             {
+                document.getElementById("min").innerText=Number(document.getElementById("min").innerText)-1
+             }
+           },1000);
+    </script>
+</body>
+</html>

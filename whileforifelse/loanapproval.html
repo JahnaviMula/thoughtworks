@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+  <head><tittle></tittle></head>
+  <body>
+    <script>
+        var income=+prompt("enter monthly income:")
+        var debt=+prompt("enter monthly dedted amount")
+        var credit=+prompt("enter credit score")
+        if(credit<650)
+          console.log("rejected")
+        else
+        {
+            var dti=(debt/income)*100
+            if(dti>40)
+             console.log("rejected")
+            else
+             console.log("approval")
+        }
+    </script>
+  </body>
+</html>

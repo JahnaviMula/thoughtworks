@@ -1,0 +1,29 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            var a=+prompt("enter number of units:");
+            let amount=0
+           if(a<=100)
+             amount=a*1
+           else
+           {
+             amount=100
+             a=a-100
+             if(a>=100)
+             {
+                amount=amount+100*2
+                a=a-100
+                if(a!=0)
+               {
+                   amount=amount+a*5
+               } 
+             }
+             else{
+              amount=amount+a*2
+             }
+           } 
+            console.log(amount)
+        </script>
+    </body>
+</html>

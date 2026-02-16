@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        .runs_class{
+            display: inline-block;
+            border: 1px solid black;
+            color: rgb(244, 7, 7);
+            width: 35px;
+            height: 25px;
+            border-radius: 45%;
+            text-align: center;
+            margin: 2px;
+        }
+        .wicket_class{
+             display: inline-block;
+            border: 1px solid black;
+            color: rgb(244, 7, 7);
+            width: 42px;
+            height: 45px;
+            border-radius: 45%;
+            padding-top: 20px;
+            text-align: center;
+            margin: 2px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Score:<span id="runs">0</span>-<span id="wickets">0</span></h1>
+    <script>
+        for(let i=0;i<7;i++)
+        {
+            let btn=document.createElement("button")
+            btn.innerText=i
+            document.body.appendChild(btn)
+            btn.addEventListener("click",function(){
+                var total_runs=document.getElementById("runs").innerHTML
+                total_runs=parseInt(total_runs)+i
+                document.getElementById("runs").innerText=total_runs
+                var x=document.createElement("div")
+                 x.innerText=i              
+                x.classList.add("runs_class")
+                document.body.appendChild(x)
+            })
+        }
+        var wicket_button=document.createElement("button")
+        wicket_button.innerText="wicket"
+        document.body.appendChild(wicket_button)
+        wicket_button.addEventListener("click",function(){
+                 var total_wickets=document.getElementById("wickets").innerHTML
+                total_wickets=parseInt(total_wickets)+1
+                document.getElementById("wickets").innerText=total_wickets
+                var x=document.createElement("div")
+                 x.innerText="wicket"             
+                x.classList.add("wicket_class")
+                document.body.appendChild(x)
+        })
+         var wide_button=document.createElement("button")
+        wide_button.innerText="wide"
+        document.body.appendChild(wide_button)
+        wide_button.addEventListener("click",function(){
+                 var total_runs=document.getElementById("runs").innerHTML
+                total_runs=parseInt(total_runs)+1
+                document.getElementById("runs").innerText=total_runs
+                var x=document.createElement("div")
+                 x.innerText="wide"             
+                x.classList.add("wicket_class")
+                document.body.appendChild(x)
+        })
+    </script>
+</body>
+</html>

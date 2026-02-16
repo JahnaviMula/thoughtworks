@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+ <head>
+    <tittle></tittle>
+ </head>
+ <body>
+    <script>
+        var a=+prompt("entre a for interval1:");
+        var b=+prompt("enter b for interval2:");
+        var c=+prompt("enter c for interval2:");
+        var d=+prompt("enter d for interval2:");
+        console.log(a,b,c,d);
+        if(a>b || c>d)
+          console.log("in valid")
+        else
+        {
+            if(b<c || d<a)
+            console.log("do not overlap");
+            else 
+            console.log("overlap");    
+        }
+    </script>
+ </body>
+</html>

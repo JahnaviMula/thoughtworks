@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        .nothing{
+            background-color: rgb(210, 245, 9);
+            border: 2px solid red;
+            width: 460px;
+            border-radius: 20px;
+        }
+        img{
+            width: 100px;
+            height: 100px;
+            vertical-align: middle;
+            padding: 25px;
+        }
+    </style>
+</head>
+<body>
+    Name:<input type="text" id="nm"><br>
+    Number:<input type="text" id="nm1"><br>
+    email:<input type="text" id="nm2"><br>
+    Image:<input type="file" id="nm3"><br>
+    <input type="button" value="add to contact" onclick="fun()">
+    <script>
+        function fun(){
+            var x=document.createElement("div")
+            var pt=document.createElement("p")
+                pt.innerText="Name:"+document.getElementById("nm").value
+            var pt1=document.createElement("p")
+                pt1.innerText="Name:"+document.getElementById("nm1").value   
+            var pt2=document.createElement("p")
+                pt2.innerText="Name:"+document.getElementById("nm2").value 
+            var image=document.createElement("img")
+                          var file = document.getElementById("nm3").files[0];
+            if(file){
+                image.src = URL.createObjectURL(file);
+            }
+            x.appendChild(image)     
+            x.appendChild(pt)
+            x.appendChild(pt1)
+            x.appendChild(pt2)
+            x.classList.add("nothing")
+            document.body.appendChild(x)    
+        }
+    </script>
+</body>
+</html>

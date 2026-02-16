@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <script>
+            var n=+prompt("enter a number")
+            rec=0
+            while(n!=0)
+           {
+                r=n%10
+                if(r%2==0)
+                rec=rec*10+r
+                n=parseInt(n/10)
+           } 
+           while(rec!=0)
+           {
+                r1=rec%10
+                console.log(r1)
+                rec=parseInt(rec/10)
+           } 
+        </script>
+    </body>
+</html>

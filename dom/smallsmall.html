@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+    <title></title>
+    <style>
+        .abcd{
+             color: red;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var a=document.createElement("h1")
+        a.innerText="hello dom world"
+        document.body.appendChild(a)
+        a.classList.add("abcd")
+        var ar=["janu","praveensir","sam","harshi","jaya"]
+        for(var i=0;i<ar.length;i++)
+       {
+         var nli=document.createElement("li")
+         nli.innerText=ar[i]
+         document.body.appendChild(nli)
+       }
+         var br=[11,12,13,14,15,16,17,18,19]
+        for(var i=0;i<br.length;i++)
+       {
+         var nnli=document.createElement("li")
+         nnli.innerText=br[i]
+         document.body.appendChild(nnli)
+       }
+
+    </script>
+</body>
+</html>

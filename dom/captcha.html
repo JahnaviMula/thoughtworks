@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+
+</head>
+<body>
+    <h1 style="color: green;" id="htxt">E2gA6j</h1>
+    <input type="text" id="txt">
+    <input type="button" value="submit" onclick="fun()">
+</body>
+<script>
+    function fun(){
+        data=document.getElementById("htxt").innerHTML
+        a=document.getElementById("txt").value 
+        if(data===a)
+          alert("correct captcha")
+        else
+           alert("incorrect captcha")
+    }
+</script>
+</html>

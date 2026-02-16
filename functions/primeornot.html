@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        var n=+prompt()
+        function prime(n)
+        {
+            t=true
+            for(var i=2;i<n;i++)
+        {    
+            
+            if(n%i==0)
+          {
+            t=false
+            console.log("not prime number")
+            break
+          }
+        }  
+         if(t)
+           console.log("prime number")
+        }
+        prime(n)
+    </script>
+</body>
+</html>

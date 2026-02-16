@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        .a{
+            color: blue;
+            background-color: brown;
+        }
+        .b{
+            color: aqua;
+            background-color: rgb(241, 241, 9);
+            border: 5px solid orange;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var x=document.createElement("h1")
+        x.innerText="hello"
+        x.classList.add("a")
+        document.body.appendChild(x)
+        var x=document.createElement("h2")
+        x.innerText="edupoly"
+        x.classList.add("a")
+        document.body.appendChild(x)
+        var x=document.createElement("p")
+        x.innerText="training"
+        x.classList.add("b")
+        document.body.appendChild(x)
+
+    </script>
+</body>
+</html>

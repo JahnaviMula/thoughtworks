@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <button onclick="nxtimg()">next</button>
+    <button onclick="preimg()">previous</button>
+    <img id="pic">
+    <script>
+        var ar=["upma.jpg","dosa.jpg","idli.jpg","meals.jpg","vada.jpg"]
+        var i=0
+        document.getElementById("pic").src=ar[i]
+        function nxtimg(){
+               if(i==ar.length-1)
+                 i=-1
+                i++;
+              document.getElementById("pic").src=ar[i]
+        }
+        function preimg()
+        {
+            if(i==0)
+              i=ar.length
+            i--
+        document.getElementById("pic").src=ar[i]
+        }
+    </script>
+</body>
+</html>

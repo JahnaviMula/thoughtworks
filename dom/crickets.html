@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<head>
+    <style>
+         .style_ball{
+        display:inline-block;
+        width:35px;
+        height:22px;
+        border-radius:50%;
+        text-align:center;
+        color:hwb(0 8% 31%);
+        border: 1px solid black;
+    }
+    .style_wicket{
+        display:inline-block;
+        width:60px;
+        height:65px;
+        border-radius:50%;
+        padding-top: 35px;
+        padding-left: 15px;
+        color:#f5f2f2;
+        border: 1px solid black;
+        background-color: blue;
+    }
+    </style>
+</head>
+<body>
+    <h1>Score:<span id="runs">0</span>-<span id="wickets">0</span></h1>
+    <input type="button" value="0" onclick="fun(0)" >
+     <input type="button" value="1" onclick="fun(1)">
+      <input type="button" value="2" onclick="fun(2)">
+       <input type="button" value="3" onclick="fun(3)">
+        <input type="button" value="4" onclick="fun(4)">
+         <input type="button" value="5" onclick="fun(5)">
+          <input type="button" value="6" onclick="fun(6)">
+           <input type="button" value="wicket" onclick="fun2()">
+            <input type="button" value="wide" onclick="fun3()">
+    <script>
+        function fun(a){
+            var ball = document.createElement("div");
+            ball.className = "style_ball";
+            ball.innerHTML = a;
+            if(a == 0) ball.style.background = "white";
+            else if(a == 1) ball.style.background = "rgba(32,255,255,0.787)";
+            else if(a == 2) ball.style.background = "rgba(42,255,255,0.887)";
+            else if(a == 3) ball.style.background = "rgba(52,255,255,0.987)";
+           else if(a == 4) ball.style.background = "rgba(102,255,255,1.787)";
+           else if(a == 5) ball.style.background = "rgba(102,255,255,1.887)";
+            else if(a == 6) ball.style.background = "rgba(102,255,255,1.987)";
+            var total_runs=document.getElementById("runs").innerHTML
+            total_runs=parseInt(total_runs)+a
+            document.getElementById("runs").innerHTML=total_runs
+            document.body.appendChild(ball)
+            
+        }
+        function fun2()
+        {
+            var total_wickets=document.getElementById("wickets").innerHTML
+            total_wickets=parseInt(total_wickets)+1
+            document.getElementById("wickets").innerHTML=total_wickets
+             var wicket= document.createElement("div");
+            wicket.className = "style_wicket";
+            wicket.innerHTML = "wicket";
+             document.body.appendChild(wicket)
+        }
+        function fun3(){
+            var wide_ball = document.createElement("div");
+            wide_ball.className = "style_wicket";
+            wide_ball.innerHTML = "wide";
+            var total_runs=document.getElementById("runs").innerHTML
+            total_runs=parseInt(total_runs)+1
+            document.getElementById("runs").innerHTML=total_runs
+            document.body.appendChild(wide_ball)
+        }
+    </script>
+</body>
+</html>

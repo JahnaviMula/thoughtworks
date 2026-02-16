@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+ <head>
+    <title></title>
+ </head>
+ <body>
+    <script>
+        var a=+prompt()
+        var b=+prompt()
+        var c=+prompt()
+        function sortnum(a,b,c)
+        {
+            ar=[a,b,c]
+            for(var i=0;i<ar.length;i++)
+            {
+                for(var j=i+1;j<ar.length;j++)
+               {
+                   if(ar[i]>ar[j])
+                   {
+                    temp=ar[i]
+                    ar[i]=ar[j+1]
+                    ar[j+1]=temp
+                   }
+               }
+            }
+            return ar
+        }
+       br=sortnum(a,b,c)
+       console.log(br[0],br[1],br[2])
+    </script>
+ </body>
+</html>
